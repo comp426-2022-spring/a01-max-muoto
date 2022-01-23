@@ -15,4 +15,3 @@ fs.readFile('./www/index.html', (err, data) => {
         console.log(`Server listening on port ${port}`);
     })
   })
-
