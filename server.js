@@ -1,10 +1,17 @@
 const http = require('http')
 const fs = require('fs')
 var argv = require('minimist')(process.argv.slice(2));
-const port = argv["port"] || 3000;
+argv["port"]
+const port = argv.port || process.env.PORT || 3000;
 
-fs.readFile('./www/index.html', (err, data) => {
-    if (err) throw err;
+
+fs.readFile('./www/index.html', 'utf-8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return
+        process.exit(1);
+    }
+
     const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
