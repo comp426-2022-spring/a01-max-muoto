@@ -5,7 +5,7 @@ argv["port"]
 const port = argv.port || process.env.PORT || 3000;
 
 
-fs.readFile('./www/index.html', 'utf-8', (err, data) => {
+fs.readFile('./www/index.html', 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return
