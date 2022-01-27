@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs')
 var argv = require('minimist')(process.argv.slice(2));
 argv["port"]
-const port = argv.port || process.env.PORT || 3000;
+const port = argv.port || 3000;
 
 
 fs.readFile('./www/index.html', 'utf8', (err, data) => {
